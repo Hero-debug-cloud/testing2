@@ -15,24 +15,24 @@ export default async function handler (req, res) {
   // res.status(200).json("ok");
 
   //finding all users from the database;
-  const alluser=await prismadb.user.findMany({});
-  res.status(200).json(alluser);
+  // const alluser=await prismadb.user.findMany({});
+  // res.status(200).json(alluser);
 
 
   //updating data from the database and fetching updated data;
   //where command is for only unique values in the db;
-  // await prismadb.user.update({
-  //   where:{
-  //     firstname:"hero"
-  //   },
-  //   data:{
-  //     lastname:"chandole",
-  //     username:"vinni",
-  //     password:"vinni"
-  //   }
-  // });
-  // const updateduser=await prismadb.user.findMany({});
-  // res.status(200).json(updateduser);
+  await prismadb.user.update({
+    where:{
+      firstname:"hero"
+    },
+    data:{
+      lastname:"chandole",
+      username:"vinni",
+      password:"vinni"
+    }
+  });
+  const updateduser=await prismadb.user.findMany({});
+  res.status(200).json(updateduser);
 
   // deleting user from the database;
   // await prismadb.user.delete({
