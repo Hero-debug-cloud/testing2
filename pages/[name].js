@@ -5,7 +5,7 @@ const Something = () => {
     const router=useRouter();
     const {name}=router.query;
   return (
-    <div>{name}</div>
+    <div>{name} now get lost from here</div>
   )
 }
 
